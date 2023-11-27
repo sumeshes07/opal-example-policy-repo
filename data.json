@@ -1,90 +1,289 @@
 {
-  "users": {
-    "alice": {
-      "roles": ["admin"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "bob": {
-      "roles": ["employee", "billing"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-     "sunil": {
-      "roles": ["guest"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "eve": {
-      "roles": ["customer"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    }
-  },
-  "role_permissions": {
-    "customer": [
-      {
-        "action": "read",
-        "type": "dog"
+  "accessinfo": {
+      "defaultPermissions": {
+          "/api/permissions": {
+              "actions": [
+                  "READ"
+              ]
+          }
       },
-      {
-        "action": "read",
-        "type": "cat"
+      "permissions": {
+          "P-13": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/groups",
+                  null
+              ]
+          },
+          "P-14": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/group/{groupId}",
+                  null
+              ]
+          },
+          "P-15": {
+              "actions": [
+                  "INSERT"
+              ],
+              "resource": [
+                  "/api/group/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-16": {
+              "actions": [
+                  "UPDATE"
+              ],
+              "resource": [
+                  "/api/group/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-17": {
+              "actions": [
+                  "INSERT"
+              ],
+              "resource": [
+                  "/api/organization",
+                  null
+              ]
+          },
+          "P-18": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/organization/{organizationId}",
+                  null
+              ]
+          },
+          "P-19": {
+              "actions": [
+                  "UPDATE"
+              ],
+              "resource": [
+                  "/api/organization/{organizationId}",
+                  null
+              ]
+          },
+          "P-20": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/organizations",
+                  null
+              ]
+          },
+          "P-21": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/permission/{permissionId}",
+                  null
+              ]
+          },
+          "P-22": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/permissions",
+                  null
+              ]
+          },
+          "P-23": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/role/{roleId}",
+                  null
+              ]
+          },
+          "P-24": {
+              "actions": [
+                  "INSERT"
+              ],
+              "resource": [
+                  "/role/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-25": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/roles",
+                  null
+              ]
+          },
+          "P-26": {
+              "actions": [
+                  "INSERT"
+              ],
+              "resource": [
+                  "/api/service/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-27": {
+              "actions": [
+                  "UPDATE"
+              ],
+              "resource": [
+                  "/api/service/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-28": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/service/{serviceId}/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-29": {
+              "actions": [
+                  "INSERT"
+              ],
+              "resource": [
+                  "/api/tenant/organization/{organizationId}",
+                  null
+              ]
+          },
+          "P-30": {
+              "actions": [
+                  "UPDATE"
+              ],
+              "resource": [
+                  "/api/tenant/{tenantId}/organization/{organizationId}",
+                  null
+              ]
+          },
+          "P-31": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/tenant/{tenantId}/organization/{organizationId}",
+                  null
+              ]
+          },
+          "P-32": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/tenants/organization/{organizationId}",
+                  null
+              ]
+          },
+          "P-33": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/users",
+                  null
+              ]
+          },
+          "P-34": {
+              "actions": [
+                  "READ"
+              ],
+              "resource": [
+                  "/api/user/{userId}",
+                  null
+              ]
+          },
+          "P-35": {
+              "actions": [
+                  "INSERT"
+              ],
+              "resource": [
+                  "/api/user/tenant/{tenantId}",
+                  null
+              ]
+          },
+          "P-36": {
+              "actions": [
+                  "UPDATE"
+              ],
+              "resource": [
+                  "/api/user/tenant/{tenantId}",
+                  null
+              ]
+          }
       },
-      {
-        "action": "adopt",
-        "type": "dog"
+      "roles": {
+          "2": {
+              "conditions": [],
+              "permissionIds": [
+                  "P-13",
+                  "P-14",
+                  "P-15",
+                  "P-16",
+                  "P-17",
+                  "P-18",
+                  "P-19",
+                  "P-20",
+                  "P-21",
+                  "P-22",
+                  "P-23",
+                  "P-24",
+                  "P-25",
+                  "P-26",
+                  "P-27",
+                  "P-28",
+                  "P-29",
+                  "P-30",
+                  "P-31",
+                  "P-32",
+                  "P-33",
+                  "P-34",
+                  "P-35",
+                  "P-36",
+                  "P-53",
+                  "P-54",
+                  "P-55"
+              ],
+              "roleName": "RBAC Admin"
+          }
       },
-      {
-        "action": "adopt",
-        "type": "cat"
+      "services": {
+          "b453b5ab-02b2-4512-8866-d37cb026a77f": {
+              "roleIds": [
+                  "2"
+              ],
+              "tenantId": "t0013"
+          }
+      },
+      "users": {
+          "1": {
+              "roleIds": [
+                  "1",
+                  "2"
+              ],
+              "selectCodes": null,
+              "tenantId": "MBI"
+          },
+          "38": {
+              "roleIds": [
+                  "2"
+              ],
+              "selectCodes": null,
+              "tenantId": "MBI"
+          }
       }
-    ],
-    "employee": [
-      {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "update",
-        "type": "dog"
-      },
-      {
-        "action": "update",
-        "type": "cat"
-      }
-    ],
-    "billing": [
-      {
-        "action": "read",
-        "type": "finance"
-      },
-      {
-        "action": "update",
-        "type": "finance"
-      }
-    ],
-    "guest": [
-     {
-       "action": "read",
-       "type": "cat"
-     },
-     {
-       "action": "read",
-       "type": "finance"
-     }
-    ]
   }
 }
