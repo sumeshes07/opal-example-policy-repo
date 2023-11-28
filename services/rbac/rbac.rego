@@ -53,6 +53,6 @@ allow {
     
     
     #checking the user have access to do a particular action on that resource
-    some permissionId1 in permissionIds
-    input.action == data.accessinfo.permissions[permissionId1].actions[_]
+    some permission in permissionIds
+    input.action == data.accessinfo.permissions[permission].actions[_]
 }
